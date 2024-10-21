@@ -122,7 +122,7 @@
 
         <!-- 3rd party test dependencies -->
         <junit.version>5.10.2</junit.version>
-        <assertj.version>3.25.3</assertj.version>
+        <assertj.version>3.26.3</assertj.version>
         <wiremock.version>2.35.1</wiremock.version>
 
         <!-- Maven plugin version -->
