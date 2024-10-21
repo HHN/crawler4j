@@ -4,11 +4,7 @@
 
 This repository contains a fork of [yasserg/crawler4j](https://github.com/yasserg/crawler4j).
 
-# Repository Archived
-
-> **⚠️ Disclaimer: This repository is no longer actively maintained and has been archived.**
-> 
-> For an alternative crawler solution, please visit [Apache StormCrawler (Incubating)](https://stormcrawler.apache.org/).
+**⚠️ Disclaimer: This repository is not actively maintained. Feel free to provide PR/bug fixes if it suits your needs. We can also do relases if there is a community need for it.**.
 
 ---
 
