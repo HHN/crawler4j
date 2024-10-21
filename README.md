@@ -4,7 +4,7 @@
 
 This repository contains a fork of [yasserg/crawler4j](https://github.com/yasserg/crawler4j).
 
-**⚠️ Disclaimer: This repository is not actively maintained. Feel free to provide PR/bug fixes if it suits your needs. We can also do relases if there is a community need for it.**.
+**⚠️⚠️ Disclaimer: This repository is not actively maintained. Feel free to provide PR/bug fixes if it suits your needs. We can also do relases if there is a community need for it. ⚠️⚠️**.
 
 ---
 
