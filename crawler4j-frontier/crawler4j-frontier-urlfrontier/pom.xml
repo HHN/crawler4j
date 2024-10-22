@@ -13,7 +13,7 @@
     <artifactId>crawler4j-frontier-urlfrontier</artifactId>
 
     <properties>
-        <url-frontier.version>2.3.1</url-frontier.version>
+        <url-frontier.version>2.4</url-frontier.version>
     </properties>
 
     <dependencies>
