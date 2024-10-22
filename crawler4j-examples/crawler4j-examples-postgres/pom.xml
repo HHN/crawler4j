@@ -37,5 +37,10 @@
             <artifactId>flyway-core</artifactId>
             <version>${flyway.db.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-database-postgresql</artifactId>
+            <version>${flyway.db.version}</version>
+        </dependency>
      </dependencies>
 </project>

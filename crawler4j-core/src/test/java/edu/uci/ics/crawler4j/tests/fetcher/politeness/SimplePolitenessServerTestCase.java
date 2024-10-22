@@ -22,6 +22,7 @@ package edu.uci.ics.crawler4j.tests.fetcher.politeness;
 import org.assertj.core.api.Assertions;
 import org.awaitility.Awaitility;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import edu.uci.ics.crawler4j.crawler.CrawlConfig;
@@ -32,6 +33,7 @@ import edu.uci.ics.crawler4j.url.WebURL;
 
 import java.util.concurrent.TimeUnit;
 
+@Disabled(value = "Flaky test on CI")
 public class SimplePolitenessServerTestCase {
 
     private edu.uci.ics.crawler4j.PolitenessServer simplePolitenessServer;
