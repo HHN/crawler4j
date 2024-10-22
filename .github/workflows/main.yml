@@ -22,6 +22,6 @@ jobs:
           distribution: 'temurin'
 
       - name: Build with Maven
-        run: mvn clean install -Pforbiddenapis
+        run: mvn clean install -Pforbiddenapis -ntp
         env:
           MAVEN_OPTS: -Xmx2048m
