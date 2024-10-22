@@ -1,1 +1,1 @@
-:where(.some-tile:not(.preserve-color))>*{color:#161616}
+:invalid(.some-tile:not(.preserve-color))>*{color:#161616}
