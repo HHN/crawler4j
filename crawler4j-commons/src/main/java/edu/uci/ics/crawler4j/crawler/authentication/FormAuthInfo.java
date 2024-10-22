@@ -29,6 +29,7 @@ import javax.swing.text.html.FormSubmitEvent.MethodType;
 import org.apache.hc.client5.http.ClientProtocolException;
 import org.apache.hc.client5.http.classic.methods.HttpPost;
 import org.apache.hc.client5.http.entity.UrlEncodedFormEntity;
+import org.apache.hc.client5.http.impl.classic.BasicHttpClientResponseHandler;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.core5.http.NameValuePair;
 import org.apache.hc.core5.http.message.BasicNameValuePair;
@@ -112,7 +113,7 @@ public class FormAuthInfo extends AuthInfo {
         httpPost.setEntity(entity);
 
         try {
-            httpClient.execute(httpPost);
+            httpClient.execute(httpPost, new BasicHttpClientResponseHandler());
             LOGGER.debug("Successfully request to login in with user: {} to: {}", getUsername(), getHost());
         } catch (ClientProtocolException e) {
             LOGGER.error("While trying to login to: {} - Client protocol not supported", getHost(), e);

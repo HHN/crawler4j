@@ -35,6 +35,7 @@ import org.apache.hc.client5.http.auth.Credentials;
 import org.apache.hc.client5.http.auth.UsernamePasswordCredentials;
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.classic.methods.HttpUriRequest;
+import org.apache.hc.client5.http.config.ConnectionConfig;
 import org.apache.hc.client5.http.config.RequestConfig;
 import org.apache.hc.client5.http.impl.auth.BasicCredentialsProvider;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
@@ -93,7 +94,6 @@ public class PageFetcher {
                 .setCookieSpec(config.getCookiePolicy())
                 .setRedirectsEnabled(false)
                 .setResponseTimeout(Timeout.ofMilliseconds(config.getSocketTimeout()))
-                .setConnectTimeout(Timeout.ofMilliseconds(config.getConnectionTimeout()))
                 .build();
 
         RegistryBuilder<ConnectionSocketFactory> connRegistryBuilder = RegistryBuilder.create();
@@ -121,6 +121,9 @@ public class PageFetcher {
                 new SniPoolingHttpClientConnectionManager(connRegistry, config.getDnsResolver());
         connectionManager.setMaxTotal(config.getMaxTotalConnections());
         connectionManager.setDefaultMaxPerRoute(config.getMaxConnectionsPerHost());
+        connectionManager.setDefaultConnectionConfig(ConnectionConfig.custom()
+                .setConnectTimeout(Timeout.ofMilliseconds(config.getConnectionTimeout()))
+                .build());
 
         HttpClientBuilder clientBuilder = HttpClientBuilder.create();
         if (config.getCookieStore() != null) {
