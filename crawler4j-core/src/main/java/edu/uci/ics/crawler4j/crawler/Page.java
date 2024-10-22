@@ -21,10 +21,11 @@ package edu.uci.ics.crawler4j.crawler;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Locale;
+import java.util.Optional;
 
+import org.apache.hc.core5.http.ContentType;
 import org.apache.hc.core5.http.Header;
 import org.apache.hc.core5.http.HttpEntity;
 import org.apache.hc.core5.util.ByteArrayBuffer;
@@ -167,17 +168,9 @@ public class Page {
 
         contentEncoding = entity.getContentEncoding();
 
-        Charset charset;
-        try {
-            //FIX how to obtain it with http client 5
-            // charset = ContentType.getOrDefault(entity).getCharset();
-            charset = StandardCharsets.UTF_8;
-        } catch (Exception e) {
-            logger.warn("parse charset failed: {}", e.getMessage());
-            charset = StandardCharsets.UTF_8;
-        }
-
-        contentCharset = charset.displayName(Locale.ROOT);
+        contentCharset = Optional.ofNullable(ContentType.parseLenient(contentType).getCharset())
+                .orElse(StandardCharsets.UTF_8)
+                .displayName(Locale.ROOT);
         contentData = toByteArray(entity, maxBytes);
     }
 
