@@ -34,8 +34,9 @@ import edu.uci.ics.crawler4j.url.WebURLFactory;
 import org.apache.tika.metadata.DublinCore;
 import org.apache.tika.metadata.Metadata;
 import org.apache.tika.parser.ParseContext;
+import org.apache.tika.parser.Parser;
 import org.apache.tika.parser.html.HtmlMapper;
-import org.apache.tika.parser.html.HtmlParser;
+import org.apache.tika.parser.html.JSoupParser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -51,7 +52,7 @@ public class TikaHtmlParser implements edu.uci.ics.crawler4j.parser.HtmlParser {
     private final CrawlConfig config;
     private final TLDList tldList;
 
-    private final HtmlParser htmlParser;
+    private final Parser htmlParser;
     private final ParseContext parseContext;
     private final WebURLFactory factory;
     private final BasicURLNormalizer normalizer;
@@ -61,7 +62,7 @@ public class TikaHtmlParser implements edu.uci.ics.crawler4j.parser.HtmlParser {
         this.tldList = tldList;
         this.normalizer = normalizer;
 
-        htmlParser = new HtmlParser();
+        htmlParser = new JSoupParser();
         parseContext = new ParseContext();
         parseContext.set(HtmlMapper.class, new AllTagMapper());
         this.factory = webURLFactory;

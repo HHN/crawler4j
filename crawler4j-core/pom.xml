@@ -161,7 +161,7 @@
         </dependency>
         <dependency>
             <groupId>org.apache.tika</groupId>
-            <artifactId>tika-parsers-standard-package</artifactId>
+            <artifactId>tika-parser-html-module</artifactId>
             <version>${apache.tika.version}</version>
             <exclusions>
                 <exclusion>
@@ -186,19 +186,19 @@
                 </exclusion>
             </exclusions>
         </dependency>
-					<!-- Test dependencies -->
-					<dependency>
-						<groupId>org.junit.jupiter</groupId>
-						<artifactId>junit-jupiter</artifactId>
-						<version>${junit.version}</version>
-						<scope>test</scope>
-					</dependency>
-					<dependency>
-						<groupId>org.assertj</groupId>
-						<artifactId>assertj-core</artifactId>
-						<version>${assertj.version}</version>
-						<scope>test</scope>
-					</dependency>
+        <!-- Test dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>${assertj.version}</version>
+            <scope>test</scope>
+        </dependency>
         <!-- Test Dependencies -->
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>

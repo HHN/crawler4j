@@ -20,6 +20,7 @@
 package edu.uci.ics.crawler4j.tests.fetcher.politeness;
 
 import org.assertj.core.api.Assertions;
+import org.awaitility.Awaitility;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -28,6 +29,8 @@ import edu.uci.ics.crawler4j.fetcher.politeness.CachedPolitenessServer;
 import edu.uci.ics.crawler4j.fetcher.politeness.SimplePolitenessServer;
 import edu.uci.ics.crawler4j.test.SimpleWebURL;
 import edu.uci.ics.crawler4j.url.WebURL;
+
+import java.util.concurrent.TimeUnit;
 
 public class SimplePolitenessServerTestCase {
 
@@ -54,8 +57,8 @@ public class SimplePolitenessServerTestCase {
         politenessDelay = simplePolitenessServer.applyPoliteness(webUrl);
 
         Assertions.assertThat(politenessDelay).isBetween(//
-        		Long.valueOf(config.getPolitenessDelay() - 10)//
-        		, Long.valueOf(config.getPolitenessDelay()));
+                (long) (config.getPolitenessDelay() - 10)//
+        		, (long) config.getPolitenessDelay());
 
     }
 
@@ -74,15 +77,13 @@ public class SimplePolitenessServerTestCase {
         politenessDelay = simplePolitenessServer.applyPoliteness(webUrl);
 
         Assertions.assertThat(politenessDelay).isBetween(//
-        		Long.valueOf(config.getPolitenessDelay() - 10)//
-        		, Long.valueOf(config.getPolitenessDelay()));
+                (long) (config.getPolitenessDelay() - 10)//
+        		, (long) config.getPolitenessDelay());
 
-        //let's wait some time, it should not be listed anymore
-        sleep(1000);
-
-        politenessDelay = simplePolitenessServer.applyPoliteness(webUrl);
-
-        Assertions.assertThat(politenessDelay).isEqualTo(CachedPolitenessServer.NO_POLITENESS_APPLIED);
+        Awaitility.await().atMost(10, TimeUnit.SECONDS).untilAsserted(() -> {
+            final long delay = simplePolitenessServer.applyPoliteness(webUrl);
+            Assertions.assertThat(delay).isEqualTo(CachedPolitenessServer.NO_POLITENESS_APPLIED);
+        });
 
     }
 
@@ -101,8 +102,8 @@ public class SimplePolitenessServerTestCase {
         politenessDelay = simplePolitenessServer.applyPoliteness(webUrl);
 
         Assertions.assertThat(politenessDelay).isBetween(//
-        		Long.valueOf(config.getPolitenessDelay() - 10)//
-        		, Long.valueOf(config.getPolitenessDelay()));
+                (long) (config.getPolitenessDelay() - 10)//
+        		, (long) config.getPolitenessDelay());
 
         webUrl.setURL("https://github.com/yasserg/crawler4j/blob/master/pom.xml");
 
@@ -110,21 +111,11 @@ public class SimplePolitenessServerTestCase {
 
         Assertions.assertThat(politenessDelay).isEqualTo(config.getPolitenessDelay());
 
-        //let's wait some time, it should not be listed anymore
-        sleep(3000);
+        Awaitility.await().atMost(10, TimeUnit.SECONDS).untilAsserted(() -> {
+            final long delay = simplePolitenessServer.applyPoliteness(webUrl);
+            Assertions.assertThat(delay).isEqualTo(CachedPolitenessServer.NO_POLITENESS_APPLIED);
+        });
 
-        politenessDelay = simplePolitenessServer.applyPoliteness(webUrl);
-
-        Assertions.assertThat(politenessDelay).isEqualTo(CachedPolitenessServer.NO_POLITENESS_APPLIED);
-
-    }
-
-    private void sleep(int i) {
-        try {
-            Thread.sleep(i);
-        } catch (InterruptedException e) {
-            //nothing to do here
-        }
     }
 
 }

@@ -351,6 +351,18 @@ An example on how to configure form authentication in its most simple form:
 
 Overriding `FormAuthInfo.doFormLogin(...)` allows implementing more dynamic form authentication (entering more fields, fetching dynamic login forms, ...).
 
+## Binary Content
+
+To lighten our dependencies, we replaced the default Apache Tika standard package with the HTML module only.
+If you need more parsing capabilities, just add the related dependencies:
+```xml
+<dependency>
+   <groupId>org.apache.tika</groupId>
+   <artifactId>tika-parsers-standard</artifactId>
+   <version>VERSION</version>
+</dependency>
+```
+
 ## High-level design diagrams
 
 Below activity diagram highlights the most important steps and vocabulary to know as user of the library.
