@@ -9,7 +9,7 @@ This repository contains a fork of [yasserg/crawler4j](https://github.com/yasser
 ---
 
 crawler4j is an open source web crawler for Java which provides a simple interface for
-crawling the Web. Using it, you can setup a multi-threaded web crawler in few minutes.
+crawling the Web. Using it, you can set up a multithreaded web crawler in few minutes.
 
 ## Table of content
 
@@ -25,21 +25,18 @@ crawling the Web. Using it, you can setup a multi-threaded web crawler in few mi
 
 ## Why you should use this fork?
 
-This fork starts where the development of the previous main repository stalled.
+This fork picks up where development on the original main repository left off, bringing several key improvements:
 
-Some highlights include:
-
-- choice between multiple frontier implementations => avoid using a database with a license that doesn't comply with your use-case
-- easy substitution of various parser implementations (not only for html, but also css, binary, and plain text)
-- dynamic authentication
-- improved exception handling, more versatile to customize
-- fixes various parsing issues
-- more documentation
-- more tests and all tests are JUnit5 based (so no knowledge of Groovy and/or Spock needed anymore to maintain the codebase)
-- uses Apache Maven as build tool
-- provides a clean upgrade path by keeping backward compatibility in mind and deprecating methods before removing them
-- more eyes have gone through the code, so readability and correctness have improved
-- maintained, i.e. dependencies are often updated to their latest versions
+- Offers a choice between multiple frontier implementations, allowing you to avoid databases with incompatible licenses for your use case.
+- Simplifies swapping out parser implementations, supporting not just HTML but also CSS, binary, and plain text formats.
+- Supports dynamic authentication.
+- Enhances exception handling, making it easier to customize.
+- Fixes various parsing issues.
+- Includes expanded documentation.
+- Features additional tests, now entirely based on JUnit 5 (eliminating the need for Groovy or Spock knowledge to maintain the codebase).
+- Utilizes Apache Maven as the build tool.
+- Ensures a smooth upgrade path with backward compatibility and method deprecation before removal.
+- Improves code readability and correctness, with more contributors reviewing the code.
 
 ## Installation
 
@@ -51,7 +48,7 @@ Add the following dependency to your pom.xml:
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>
             <artifactId>crawler4j-with-sleepycat</artifactId>
-            <version>5.0.2</version>
+            <version>5.1.0</version>
         </dependency>
 ```
 
@@ -63,7 +60,7 @@ Otherwise, you can use `HSQLDB` instead
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>
             <artifactId>crawler4j-with-hsqldb</artifactId>
-            <version>5.0.2</version>
+            <version>5.1.0</version>
         </dependency>
 ```
 
@@ -73,7 +70,7 @@ or you use an external [crawler-commons/url-frontier](https://github.com/crawler
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>
             <artifactId>crawler4j-with-urlfrontier</artifactId>
-            <version>5.0.2</version>
+            <version>5.1.0</version>
         </dependency>
 ```
 
@@ -81,10 +78,10 @@ or you use an external [crawler-commons/url-frontier](https://github.com/crawler
 
 ### Archetype
 
-Since `5.0.1`, we provide a Maven archetype to bootstrap crawler4j development. Just urn
+We provide a Maven archetype to bootstrap crawler4j development. Just run
 
 ```bash
-mvn archetype:generate -DarchetypeGroupId=de.hs-heilbronn.mi -DarchetypeArtifactId=crawler4j-archetype -DarchetypeVersion=5.0.1                
+mvn archetype:generate -DarchetypeGroupId=de.hs-heilbronn.mi -DarchetypeArtifactId=crawler4j-archetype -DarchetypeVersion=5.1.0                
 ```
 
 ### Manual

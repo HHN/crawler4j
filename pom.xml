@@ -4,7 +4,7 @@
     <groupId>de.hs-heilbronn.mi</groupId>
     <artifactId>crawler4j-parent</artifactId>
     <packaging>pom</packaging>
-    <version>5.1.0-SNAPSHOT</version>
+    <version>5.1.0</version>
     <name>${project.groupId}:${project.artifactId}</name>
 
     <description>Open Source Web Crawler for Java</description>
@@ -23,18 +23,6 @@
         <developerConnection>scm:git:git@github.com:rzo1/crawler4j.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <name>Sonatype Nexus snapshot repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <name>Sonatype Nexus release repository</name>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
     <developers>
         <developer>
             <id>yasserg</id>
@@ -167,6 +155,15 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-gpg-plugin</artifactId>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>0.6.0</version>
+                        <extensions>true</extensions>
+                        <configuration>
+                            <publishingServerId>central</publishingServerId>
+                        </configuration>
                     </plugin>
                 </plugins>
             </build>
