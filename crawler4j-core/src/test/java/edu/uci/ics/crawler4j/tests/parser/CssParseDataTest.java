@@ -24,7 +24,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import java.util.Set;
 
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import com.helger.css.parser.ParseException;
@@ -35,7 +34,6 @@ import edu.uci.ics.crawler4j.test.Crawler4jTestUtils;
 import edu.uci.ics.crawler4j.test.TestUtils;
 import edu.uci.ics.crawler4j.url.WebURL;
 
-@Disabled(value = "Flaky test. Currently broken with latest Jacoco version!")
 public class CssParseDataTest {
 	
 	@Test
