@@ -19,7 +19,7 @@
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>
             <artifactId>crawler4j-with-sleepycat</artifactId>
-            <version>${crawler4j.version}</version>
+            <version>${project.version}</version>
             <type>pom</type>
         </dependency>
         <dependency>

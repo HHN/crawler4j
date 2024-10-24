@@ -31,7 +31,7 @@
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>
             <artifactId>crawler4j-commons</artifactId>
-            <version>${crawler4j.version}</version>
+            <version>${project.version}</version>
         </dependency>
         <!-- Logging API -->
         <dependency>

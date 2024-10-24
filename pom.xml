@@ -62,6 +62,14 @@
             <email/>
             <timezone>Europe/Brussels</timezone>
         </developer>
+        <developer>
+            <id>valfirst</id>
+            <name>Valery Yatsynovich</name>
+            <roles>
+                <role>Contributor</role>
+            </roles>
+            <email />
+        </developer>
     </developers>
 
     <organization>
@@ -79,7 +87,7 @@
 
     <properties>
         <!-- Application settings -->
-        <copyright.year>2022</copyright.year>
+        <copyright.year>2024</copyright.year>
         <license.inceptionYear>2010</license.inceptionYear>
         <license.licenseName>apache_v2</license.licenseName>
 
@@ -91,8 +99,6 @@
         <maven.compile.encoding>UTF-8</maven.compile.encoding>
         <maven.compiler.target>${java.target}</maven.compiler.target>
 
-        <crawler4j.version>${project.parent.version}</crawler4j.version>
-
         <slf4j.version>2.0.16</slf4j.version>
         <log4j.version>2.24.1</log4j.version>
 
@@ -103,13 +109,13 @@
         <apache.tika.version>3.0.0</apache.tika.version>
         <!-- XXX replace with crawler commons -->
         <url-detector.version>0.1.23</url-detector.version>
-        <crawler-commons.version>1.3</crawler-commons.version>
+        <crawler-commons.version>1.4</crawler-commons.version>
         <commons-io.version>2.17.0</commons-io.version>
 
         <cache2k.version>2.6.1.Final</cache2k.version>
 
         <!-- 3rd party test dependencies -->
-        <junit.version>5.11.3</junit.version>
+        <junit.version>5.11.2</junit.version>
         <assertj.version>3.26.3</assertj.version>
         <wiremock.version>2.35.2</wiremock.version>
 

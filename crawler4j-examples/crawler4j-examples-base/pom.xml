@@ -14,19 +14,19 @@
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>
             <artifactId>crawler4j-with-sleepycat</artifactId>
-            <version>${crawler4j.version}</version>
+            <version>${project.version}</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>
             <artifactId>crawler4j-with-hsqldb</artifactId>
-            <version>${crawler4j.version}</version>
+            <version>${project.version}</version>
             <type>pom</type>
         </dependency>
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>
             <artifactId>crawler4j-with-urlfrontier</artifactId>
-            <version>${crawler4j.version}</version>
+            <version>${project.version}</version>
             <type>pom</type>
         </dependency>
     </dependencies>
