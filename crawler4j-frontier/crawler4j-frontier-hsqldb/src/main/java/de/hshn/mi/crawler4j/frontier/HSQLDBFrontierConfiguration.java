@@ -40,13 +40,17 @@ public class HSQLDBFrontierConfiguration implements FrontierConfiguration {
     private final Frontier frontier;
 
     public HSQLDBFrontierConfiguration(CrawlConfig crawlConfig, int poolSize) {
+        this(crawlConfig, poolSize, false);
+    }
+
+    public HSQLDBFrontierConfiguration(CrawlConfig crawlConfig, int poolSize, boolean shutdown) {
 
         HikariConfig config = new HikariConfig();
         config.addDataSourceProperty("cachePrepStmts", "true");
         config.addDataSourceProperty("prepStmtCacheSize", "250");
         config.addDataSourceProperty("prepStmtCacheSqlLimit", "2048");
 
-        config.setJdbcUrl(getJDBCUrl(crawlConfig.isResumableCrawling(), crawlConfig.getCrawlStorageFolder()));
+        config.setJdbcUrl(getJDBCUrl(crawlConfig.isResumableCrawling(), crawlConfig.getCrawlStorageFolder(), shutdown));
         config.setUsername("sa");
         config.setPassword("");
         config.setMaximumPoolSize(poolSize);
@@ -100,9 +104,9 @@ public class HSQLDBFrontierConfiguration implements FrontierConfiguration {
 
     }
 
-    private String getJDBCUrl(boolean resumableCrawling, String crawlStorageFolder) {
+    private String getJDBCUrl(boolean resumableCrawling, String crawlStorageFolder, boolean shutdown) {
         if (resumableCrawling) {
-            return "jdbc:hsqldb:file:" + crawlStorageFolder + "/frontier;sql.syntax_pgs=true";
+            return "jdbc:hsqldb:file:" + crawlStorageFolder + "/frontier;sql.syntax_pgs=true" + (shutdown ? ";shutdown=true" : "");
         } else {
             return "jdbc:hsqldb:mem:crawler4j;sql.syntax_pgs=true";
         }
