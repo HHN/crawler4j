@@ -4,7 +4,7 @@
     <groupId>de.hs-heilbronn.mi</groupId>
     <artifactId>crawler4j-parent</artifactId>
     <packaging>pom</packaging>
-    <version>5.1.1-SNAPSHOT</version>
+    <version>5.1.1</version>
     <name>${project.groupId}:${project.artifactId}</name>
 
     <description>Open Source Web Crawler for Java</description>
