@@ -12,7 +12,7 @@
     <properties>
         <postgresql.version>42.7.5</postgresql.version>
         <c3p0.version>0.10.2</c3p0.version>
-        <flyway.db.version>11.6.0</flyway.db.version>
+        <flyway.db.version>11.7.2</flyway.db.version>
     </properties>
 
     <dependencies>
