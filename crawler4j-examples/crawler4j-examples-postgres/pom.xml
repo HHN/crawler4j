@@ -3,7 +3,7 @@
     <parent>
         <artifactId>crawler4j-examples</artifactId>
         <groupId>de.hs-heilbronn.mi</groupId>
-        <version>5.1.2-SNAPSHOT</version>
+        <version>5.1.2</version>
     </parent>
     <name>${project.groupId}:${project.artifactId}</name>
     <artifactId>crawler4j-examples-postgres</artifactId>
