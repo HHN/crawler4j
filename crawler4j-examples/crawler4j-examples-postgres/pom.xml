@@ -11,7 +11,7 @@
 
     <properties>
         <postgresql.version>42.7.6</postgresql.version>
-        <c3p0.version>0.10.2</c3p0.version>
+        <c3p0.version>0.11.1</c3p0.version>
         <flyway.db.version>11.8.2</flyway.db.version>
     </properties>
 
