@@ -109,7 +109,7 @@
         <apache.tika.version>3.2.0</apache.tika.version>
         <!-- XXX replace with crawler commons -->
         <url-detector.version>0.1.23</url-detector.version>
-        <crawler-commons.version>1.4</crawler-commons.version>
+        <crawler-commons.version>1.5</crawler-commons.version>
         <commons-io.version>2.19.0</commons-io.version>
 
         <cache2k.version>2.6.1.Final</cache2k.version>
