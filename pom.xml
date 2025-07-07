@@ -122,7 +122,7 @@
         <!-- Maven plugin version -->
         <maven.source.version>3.3.1</maven.source.version>
         <maven.javadoc.version>3.11.2</maven.javadoc.version>
-        <maven.gpg.version>3.2.7</maven.gpg.version>
+        <maven.gpg.version>3.2.8</maven.gpg.version>
         <maven.license.version>2.5.0</maven.license.version>
         <maven.build.helper.version>3.3.0</maven.build.helper.version>
         <maven.release.version>2.5.3</maven.release.version>
