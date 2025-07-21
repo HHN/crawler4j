@@ -110,7 +110,7 @@
         <!-- XXX replace with crawler commons -->
         <url-detector.version>0.1.23</url-detector.version>
         <crawler-commons.version>1.5</crawler-commons.version>
-        <commons-io.version>2.19.0</commons-io.version>
+        <commons-io.version>2.20.0</commons-io.version>
 
         <cache2k.version>2.6.1.Final</cache2k.version>
 
