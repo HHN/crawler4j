@@ -106,7 +106,7 @@
         <apache.http.core.version>5.3.4</apache.http.core.version>
         <apache.http.core.h2.version>5.3.4</apache.http.core.h2.version>
 
-        <apache.tika.version>3.2.1</apache.tika.version>
+        <apache.tika.version>3.2.2</apache.tika.version>
         <!-- XXX replace with crawler commons -->
         <url-detector.version>0.1.23</url-detector.version>
         <crawler-commons.version>1.5</crawler-commons.version>
