@@ -39,7 +39,6 @@ package edu.uci.ics.crawler4j.parser;
 import java.util.HashSet;
 import java.util.Set;
 
-import com.helger.css.ECSSVersion;
 import com.helger.css.decl.CascadingStyleSheet;
 import com.helger.css.decl.visit.CSSVisitor;
 import com.helger.css.reader.CSSReader;
@@ -56,12 +55,11 @@ public class CssParseData extends TextParseData {
 	private final WebURLFactory factory;
 	private final BasicURLNormalizer normalizer;
 	private final CSSReaderSettings cssReaderSettings;
-	
-	
+
 	public CssParseData(final WebURLFactory webURLFactory, final BasicURLNormalizer normalizer, boolean haltOnError) {
 		this.factory = webURLFactory;
 		this.normalizer = normalizer;
-		this.cssReaderSettings = new CSSReaderSettings().setCSSVersion(ECSSVersion.LATEST);
+		this.cssReaderSettings = new CSSReaderSettings();
 		if (haltOnError) {
 			// When parsing fails null is returned by the framework and NullPointerExceptions can arise later on.
 			this.cssReaderSettings.setCustomExceptionHandler(new ThrowingCSSParseExceptionCallback());
@@ -92,7 +90,7 @@ public class CssParseData extends TextParseData {
 			return new HashSet<>();
 		}
 		
-		final CascadingStyleSheet css = CSSReader.readFromStringReader(input, cssReaderSettings);
+		final CascadingStyleSheet css = CSSReader.readFromStringReader(input, getCssReaderSettings());
 		if (css == null) { // Parsing failed and "haltOnError" is false.
 			return new HashSet<>();
 		}
@@ -101,4 +99,8 @@ public class CssParseData extends TextParseData {
 		CSSVisitor.visitCSSUrl(css, cssVisitor);
 		return cssVisitor.getSeedUrls();
 	}
+
+    protected CSSReaderSettings getCssReaderSettings() {
+        return cssReaderSettings;
+    }
 }
