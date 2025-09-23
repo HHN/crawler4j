@@ -1,5 +1,8 @@
-name: Dependabot auto-approve
-on: pull_request_target
+name: Auto-merge Dependabot PRs
+
+on:
+  pull_request:
+    types: [opened, synchronize]  # when PR is created or updated
 
 permissions:
   contents: write
