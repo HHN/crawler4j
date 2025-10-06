@@ -115,7 +115,7 @@
         <cache2k.version>2.6.1.Final</cache2k.version>
 
         <!-- 3rd party test dependencies -->
-        <junit.version>5.13.4</junit.version>
+        <junit.version>6.0.0</junit.version>
         <assertj.version>3.27.6</assertj.version>
         <wiremock.version>2.35.2</wiremock.version>
 
