@@ -5,7 +5,7 @@
     <parent>
         <artifactId>crawler4j-frontier</artifactId>
         <groupId>de.hs-heilbronn.mi</groupId>
-        <version>5.1.4</version>
+        <version>5.1.5-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

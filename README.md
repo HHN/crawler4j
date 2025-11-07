@@ -48,7 +48,7 @@ Add the following dependency to your pom.xml:
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>
             <artifactId>crawler4j-with-sleepycat</artifactId>
-            <version>5.1.3</version>
+            <version>5.1.4</version>
         </dependency>
 ```
 
@@ -60,7 +60,7 @@ Otherwise, you can use `HSQLDB` instead
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>
             <artifactId>crawler4j-with-hsqldb</artifactId>
-            <version>5.1.2</version>
+            <version>5.1.4</version>
         </dependency>
 ```
 
@@ -70,7 +70,7 @@ or you use an external [crawler-commons/url-frontier](https://github.com/crawler
         <dependency>
             <groupId>de.hs-heilbronn.mi</groupId>
             <artifactId>crawler4j-with-urlfrontier</artifactId>
-            <version>5.1.2</version>
+            <version>5.1.4</version>
         </dependency>
 ```
 
