@@ -4,7 +4,7 @@
     <groupId>de.hs-heilbronn.mi</groupId>
     <artifactId>crawler4j-parent</artifactId>
     <packaging>pom</packaging>
-    <version>5.1.4-SNAPSHOT</version>
+    <version>5.1.4</version>
     <name>${project.groupId}:${project.artifactId}</name>
 
     <description>Open Source Web Crawler for Java</description>
@@ -87,7 +87,7 @@
 
     <properties>
         <!-- Application settings -->
-        <copyright.year>2024</copyright.year>
+        <copyright.year>2025</copyright.year>
         <license.inceptionYear>2010</license.inceptionYear>
         <license.licenseName>apache_v2</license.licenseName>
 
@@ -169,6 +169,7 @@
                         <extensions>true</extensions>
                         <configuration>
                             <publishingServerId>central</publishingServerId>
+                            <deploymentName>crawler4j ${project.version}</deploymentName>
                         </configuration>
                     </plugin>
                 </plugins>
