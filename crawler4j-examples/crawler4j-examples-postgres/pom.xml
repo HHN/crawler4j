@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <postgresql.version>42.7.9</postgresql.version>
+        <postgresql.version>42.7.10</postgresql.version>
         <c3p0.version>0.11.2</c3p0.version>
         <flyway.db.version>12.0.1</flyway.db.version>
     </properties>
