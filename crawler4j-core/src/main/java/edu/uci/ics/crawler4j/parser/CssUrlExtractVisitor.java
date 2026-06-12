@@ -24,8 +24,8 @@ import java.util.LinkedHashSet;
 import java.util.Optional;
 import java.util.Set;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import org.jspecify.annotations.NonNull;
+import org.jspecify.annotations.Nullable;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -53,14 +53,14 @@ public class CssUrlExtractVisitor extends DefaultCSSUrlVisitor {
 	
 	
 	@Override
-	public void onImport(@Nonnull final CSSImportRule aImportRule) {
+	public void onImport(@NonNull final CSSImportRule aImportRule) {
 		addSeedUrl(aImportRule.getLocationString());
 	}
 	
 	
 	@Override
 	public void onUrlDeclaration(@Nullable final ICSSTopLevelRule aTopLevelRule,
-			@Nonnull final CSSDeclaration aDeclaration, @Nonnull final CSSExpressionMemberTermURI aURITerm)
+			@NonNull final CSSDeclaration aDeclaration, @NonNull final CSSExpressionMemberTermURI aURITerm)
 	{
 		addSeedUrl(aURITerm.getURIString());
 	}
